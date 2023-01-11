@@ -1,0 +1,2 @@
+document.querySelector("#search-box").addEventListener("input",(function(e){var n;console.log(e.currentTarget.value),n=e.currentTarget.value,fetch("https://restcountries.com/v3.1/name/".concat(n,"?fields=name.official,capital,population,flags.svg,languages")).then((function(e){if(!e.ok)throw new Error(e.status);return e.json()})).then((function(e){console.log(e)})).catch((function(e){console.log(e)}))}));
+//# sourceMappingURL=index.85acb101.js.map
