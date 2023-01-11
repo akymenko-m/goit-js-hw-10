@@ -7,7 +7,7 @@ const DEBOUNCE_DELAY = 300;
 input.addEventListener('input', getInput);
 function getInput(event) {
     console.log(event.currentTarget.value);
-    nameCountry = event.currentTarget.value;
+    const nameCountry = event.currentTarget.value;
     
     fetchCountries(nameCountry);
     
