@@ -14,7 +14,7 @@ input.addEventListener('input', debounce(getInput, DEBOUNCE_DELAY));
 function getInput() {    
     // console.log(input.value);
     const nameCountry = input.value.trim();
-    // console.log(nameCountry.length);
+    // console.log(nameCountry);
 
     if (prevValue === nameCountry || nameCountry.length === 0) {
         counrtyList.innerHTML = "";
@@ -28,6 +28,7 @@ function getInput() {
 
         if (data.length > 10) {
             Notify.info("Too many matches found. Please enter a more specific name");
+            counrtyList.innerHTML = "";
             return;
         }
 
@@ -44,6 +45,8 @@ function getInput() {
         // console.log(data);
     }).catch(error => {
         console.log(error);
+        counrtyList.innerHTML = "";
+        countryInfo.innerHTML = "";
     });
 }
 
