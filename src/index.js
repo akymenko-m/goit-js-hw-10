@@ -44,6 +44,9 @@ function getInput() {
 
         // console.log(data);
     }).catch(error => {
+        if (error.message === "404") {
+            Notify.failure("Oops, there is no country with that name");
+        }
         console.log(error);
         counrtyList.innerHTML = "";
         countryInfo.innerHTML = "";
